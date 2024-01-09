@@ -1,22 +1,12 @@
-import Link from 'next/link';
-
-export default function Home(){
-   return (
-   <div className="flex justify-center items-center h-screen">
-      <div className="gap-10 grid lg:grid-cols-2 md:grid-cols-2 sm:grid-cols-1">
-     
-       <Link href="/app/login">
-       <div className="bg-indigo-500 py-4 px-5 text-white rounded-md text-center hover:opacity-75">
-            Academia
-          </div>
-       </Link>
-       
-       
-          <a href="" className="bg-indigo-500 py-4 px-5 text-white rounded-md text-center hover:opacity-75">
-           Aluno
-          </a>
-       
-      </div>
-   </div>
-   )
+ const  Page = () =>{
+  return(
+  <div className="flex justify-center items-center h-screen">
+    <div className="grid xl:grid-cols-2 md:grid-cols-2 sm:grid-cols-1 gap-10">
+    <a href="/academia/login" className="bg-indigo-500 py-4 px-5 text-center rounded-md font-sans">Academia</a>
+    <a href="" className="bg-indigo-500 py-4 px-5 text-center rounded-md font-sans">Aluno</a>
+    </div>
+  </div>
+  )
 }
+
+export default Page;
