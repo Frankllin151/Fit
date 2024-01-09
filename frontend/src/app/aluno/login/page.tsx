@@ -57,8 +57,8 @@ const Page = () => {
         </button>
         
        <div className="flex flex-col">
-       <a href="" className="text-indigo-500 text-sm cursor-pointer">Esqueceu a senha?</a> 
-      <a href="" className="text-indigo-500 text-sm cursor-pointer">Cadastre</a>
+       <a href="/aluno/redefinir" className="text-indigo-500 text-sm cursor-pointer">Esqueceu a senha?</a> 
+      <a href="/aluno/cadastra" className="text-indigo-500 text-sm cursor-pointer">Cadastre</a>
        </div>
       </div>
     </div>

@@ -5,7 +5,7 @@ import { Sidebar } from './component/Sidebar';
 
 
 const Header = () => {
-  const [isMessageVisible, setMessageVisibility] = useState(false);
+  const  [isMessageVisible, setMessageVisibility] = useState(false);
 
   const handleToggle = () => {
     setMessageVisibility(!isMessageVisible);
