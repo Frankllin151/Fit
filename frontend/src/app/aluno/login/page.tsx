@@ -22,7 +22,7 @@ const Page = () => {
   return (
     <div className="flex justify-center items-center h-screen">
       <div className="bg-white p-8 rounded-md shadow-md w-96">
-        <h2 className="text-2xl text-black font-bold mb-4 font-sans">Login Academia</h2>
+        <h2 className="text-2xl text-black font-bold mb-4 font-sans">Login Aluno</h2>
         <div className="mb-4">
           <label htmlFor="email" className="block text-gray-700 text-sm font-bold mb-2">
             Email
