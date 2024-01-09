@@ -9,7 +9,9 @@ const Page = () => {
 
 
   const handleTogglePassword = () =>{
-    setShowPassword(!setPassword)
+  console.log(setShowPassword);
+  
+   
   }
   
 
