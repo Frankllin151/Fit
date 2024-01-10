@@ -1,17 +1,20 @@
+"use client"
 import Header from "../header";
-
+import {useState} from "react";
 
 
 const  Page = () =>{
+  const [isMessageVisible, setMessageVisibility] = useState(false);
+
     return(
        //ml-64 -> fazer verifição if o sidebar abrir coloca class ml-64
        <>
-        <Header/>  
+        <Header isMessageVisible={isMessageVisible} setMessageVisibility={setMessageVisibility}/>  
        
-    <div className="ml-64">
+    <div  className={isMessageVisible ? 'ml-64' : ''}>
       
        
-      <div className="">
+      <div className="flex justify-center">
         <div className="grid xl:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 gap-8">
             <div className="bg-indigo-500 py-5 px-3 
             rounded-md hover:opacity-70 

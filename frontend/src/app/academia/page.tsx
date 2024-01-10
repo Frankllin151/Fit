@@ -5,6 +5,7 @@ const  Page = () =>{
     return(
     <div className="">
       <Header/>
+      
     </div>
     )
   }

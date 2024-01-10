@@ -2,10 +2,16 @@
 
 import React, { useState } from 'react';
 import { Sidebar } from './component/Sidebar';
+import PropTypes from 'prop-types';
+
+type Props = {
+  isMessageVisible: string;
+  setMessageVisibility: () => void
+}
 
 
-const Header = () => {
-  const  [isMessageVisible, setMessageVisibility] = useState(false);
+const Header = ({ isMessageVisible, setMessageVisibility }:Props) => {
+  
 
   const handleToggle = () => {
     setMessageVisibility(!isMessageVisible);
