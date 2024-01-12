@@ -1,5 +1,5 @@
 "use client"
-import { UserPeople } from "../component/UserAluno";
+import { UserAluno } from "../component/UserAluno";
 import Header from "../header";
 import {useState} from "react";
 
@@ -23,7 +23,9 @@ const  Page = () =>{
     <div className="px-10">
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         {/* Plano 3 meses */}
-        <div className=" bg-indigo-500 py-5 px-3 rounded-md hover:opacity-70 cursor-pointer">
+        <div className=" bg-indigo-500 py-5 px-3 rounded-md hover:opacity-70 cursor-pointer"
+        onClick={(e) => alert("consulta o banco de dado")}
+        >
             <p className="font-sans font-semibold">R$150 à vista</p>
             <p className="text-sm">R$53,40 no cartão</p>
         </div>
@@ -42,7 +44,7 @@ const  Page = () =>{
     </div>
 </div>
 
-        <UserPeople/>
+        <UserAluno/>
     </div>
 
     </>
