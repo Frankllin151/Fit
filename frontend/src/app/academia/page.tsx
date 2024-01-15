@@ -12,7 +12,11 @@ const  Page = () =>{
     return(
     <div className="">
     <Header isSidebarActive={isSidebarActive} handleSidebarToggle={handleSidebarToggle}/>
+      <div className={isSidebarActive ? 'ml-64' : ''}>
+      <div className="px-3 py-5">
       
+    </div>
+      </div>
     </div>
     )
   }
