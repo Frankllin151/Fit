@@ -16,6 +16,7 @@ const  Page = () =>{
       <div className={isSidebarActive ? 'ml-64' : ''}>
       <div className="px-10 py-5">
       <AlunosHomeAcademia/>
+      a
     </div>
       </div>
     </div>
