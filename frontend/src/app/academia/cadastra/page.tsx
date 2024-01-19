@@ -1,5 +1,6 @@
 "use client"
 
+import axios from 'axios';
 import React, { useState } from "react";
 
 const RegistrationPage = () => {
@@ -15,9 +16,25 @@ const RegistrationPage = () => {
   const handleRegistration = () => {
     // Add your registration logic here, such as making an API call or storing the data
     // For now, let's just log the registration details
-    console.log("Name:", name);
+   /* console.log("Name:", name);
     console.log("Email:", email);
-    console.log("Password:", password);
+    console.log("Password:", password);*/
+
+    axios.post('http://localhost:8560/academia/cadastra', {
+      name: name,
+      email: email,
+      password: password
+  })
+  .then(response => {
+      console.log(response.data.message);
+      // Adicione qualquer lógica adicional de sucesso aqui
+  })
+  .catch(error => {
+      console.error('Erro ao registrar:', error);
+      // Adicione qualquer lógica de tratamento de erro aqui
+  });
+
+
   };
 
   return (

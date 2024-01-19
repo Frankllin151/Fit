@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AcademiaAuth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\AuthAcademiaController;
@@ -17,3 +18,5 @@ use App\Http\Controllers\AlunoController;
 
 // Main
 Route::get('/', [HomeController::class, 'indexHome'])->name('home');
+
+Route::post('/academia/cadastra' , [AcademiaAuth::class , 'AuthCadastro' ])->name('cadastra');
