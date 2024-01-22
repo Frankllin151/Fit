@@ -3,7 +3,7 @@
 import axios from 'axios';
 import React, { useState } from "react";
 
-const RegistrationPage = () => {
+const RegistrationPage = () => {  
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -12,31 +12,32 @@ const RegistrationPage = () => {
   const handleTogglePassword = () => {
     setShowPassword(!showPassword);
   };
+  //
 
-  const handleRegistration = () => {
-    // Add your registration logic here, such as making an API call or storing the data
-    // For now, let's just log the registration details
-   /* console.log("Name:", name);
-    console.log("Email:", email);
-    console.log("Password:", password);*/
-
-    axios.post('http://localhost:8560/academia/cadastra', {
-      name: name,
-      email: email,
-      password: password
-  })
-  .then(response => {
-      console.log(response.data.message);
-      // Adicione qualquer lógica adicional de sucesso aqui
-  })
-  .catch(error => {
-      console.error('Erro ao registrar:', error);
-      // Adicione qualquer lógica de tratamento de erro aqui
-  });
-
-
+  const sendDataToBackEnd = async () => {
+    try {
+      const response = await fetch('http://localhost:8560/api/academia/cadastra', {
+        method: "POST",
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        body: JSON.stringify({
+          data: {
+            name: name,
+            email: email,
+            password: password,
+          }
+        })
+      });
+  
+      const result = await response.json();
+      console.log(result.message); // Mensagem do backend
+    } catch (error) {
+      console.error("Erro ao enviar dados para o backend", error);
+    }
   };
-
+  
   return (
     <div className="flex justify-center items-center h-screen">
       <div className="bg-white p-8 rounded-md shadow-md w-96">
@@ -86,7 +87,7 @@ const RegistrationPage = () => {
           />
         </div>
         <button
-          onClick={handleRegistration}
+          onClick={sendDataToBackEnd}
           className="bg-indigo-500 py-4 px-5 text-center rounded-md font-sans text-white mb-4"
         >
           Cadastrar

@@ -8,13 +8,11 @@ class AcademiaAuth extends Controller
 {
     //
 
-    public function AuthCadastro(Request $request)
+    public function registerUser(Request $request)
     {
-        $name = $request->input('name');
-        $email = $request->input('email');
-        $password = $request->input('password');
-
-        print_r($password);
+        $data = $request->json()->all();
+   print_r($data);
+       // return response()->json(['message' => 'Usuário cadastrado com sucesso'], 200);
 
     }
 }
