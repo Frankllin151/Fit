@@ -3,6 +3,8 @@
 use Illuminate\Support\Facades\Facade;
 use Illuminate\Support\ServiceProvider;
 
+require  './vendor/fruitcake/php-cors/src/CorsService.php';
+require './vendor/fruitcake/php-cors/src/Exceptions/InvalidOptionException.php';
 return [
 
     /*
@@ -163,6 +165,7 @@ return [
         /*
          * Application Service Providers...
          */
+        
         App\Providers\AppServiceProvider::class,
         App\Providers\AuthServiceProvider::class,
         // App\Providers\BroadcastServiceProvider::class,
