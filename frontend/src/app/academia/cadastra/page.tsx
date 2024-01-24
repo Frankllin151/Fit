@@ -14,30 +14,28 @@ const RegistrationPage = () => {
   };
   //
 
-  const sendDataToBackEnd = async () => {
+  const axios = require('axios'); // If you're using Node.js, or make sure to include Axios in your frontend project
+
+const sendDataToBackEnd = async () => {
     try {
-      const response = await fetch('http://localhost:8560/api/academia/cadastra', {
-        method: "POST",
-        headers: {
-          'Content-Type': 'application/json',
-          'Accept': 'application/json'
-        },
-        body: JSON.stringify({
-          data: {
-            name: name,
-            email: email,
-            password: password,
-          }
-        })
-      });
-  
-      const result = await response.json();
-      console.log(result.message); // Mensagem do backend
+        const response = await axios.post('http://localhost:8560/api/academia/cadastra', {
+            data: {
+                name: name,
+                email: email,
+                password: password,
+            }
+        }, {
+            headers: {
+                'Content-Type': 'application/json',
+                'Accept': 'application/json'
+            }
+        });
+
+        console.log(response.data.message); // Message from the backend
     } catch (error) {
-      console.error("Erro ao enviar dados para o backend", error);
+        console.error("Error sending data to the backend", error);
     }
-  };
-  
+};
   return (
     <div className="flex justify-center items-center h-screen">
       <div className="bg-white p-8 rounded-md shadow-md w-96">
